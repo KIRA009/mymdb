@@ -1,0 +1,128 @@
+body {
+    margin-top: 100px
+}
+.options {
+    max-width: 103.5vw;
+}
+.movie img {
+    float: left;
+    margin: 0;
+    padding: 10px;
+    margin-right: 20px;
+    height: 400px;
+}
+.movie {
+    width: 100%;
+}
+.title {
+    letter-spacing: -1px;
+    font-size: 24px;
+    color: #343434;
+    margin: 10px;
+}
+.title span {
+    font-size: 34px;
+    font-weight: 700;
+    padding-right: 10px;
+    color: #101010;
+}
+.utilities {
+    display: block;
+}
+.utility {
+    padding: 5px;
+}
+.movie .score {
+    background-color: #101010;
+    color: #ffffff;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px 10px;
+}
+.utilities .utility i{
+    width: 50px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    height: 50px;
+    padding: 13px 11px;
+    transition: 0.3s;
+    font-size: 20px;
+}
+.fa-bookmark {
+    padding: 13px 14px!important;
+}
+.utilities .utility i:hover, .utilities .utility i.active {
+    background-color: #ffffff;
+    cursor: pointer;
+}
+.fa-youtube:hover, .fa-heart:hover, .fa-heart.active {
+    color: #B72F00;
+}
+.fa-bookmark:hover, .fa-bookmark.active {
+    color: #375DAA;
+}
+.fa-star:hover, .fa-star.active {
+    color: #EF8703;
+}
+.genres {
+    margin: 10px;
+}
+.overview{
+    margin: 10px;
+}
+.overview h4, .crew h4 {
+    font-weight: 700;
+    font-size: 20px;
+}
+.overview p {
+    font-size: 16px;
+    max-width: 750px;
+}
+.genre {
+    background-color: #0C317A;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 2px;
+    display: inline-block;
+    font-size: 16px;
+}
+.bg-prim, .bg-sec {
+    transition: 0.3s;
+    position: relative;
+    top: -5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 10px 0;
+}
+.bg-prim {
+    background-color: #67DB36;
+    box-shadow: 5px 5px 0px #55B42D;
+    color: #37731D;
+}
+.bg-sec {
+    background-color: #EF3F03;
+    box-shadow: 5px 5px 0px #C4542E;
+    color: #ffffff;
+}
+button:focus, button:active {
+    box-shadow: none!important;
+}
+.btn:hover, .btn:focus {
+    box-shadow: none;
+    transform: translate(5px, 5px);
+}
+.bg-prim:hover, .bg-prim:focus {
+    color: #2F6319;
+}
+.bg-sec:hover, .bg-sec:focus {
+    color: #ffffff;
+}
+.modal {
+    top: 30vh;
+}
+#watchlist .modal-dialog, .watchlist .modal-dialog {
+    max-width: 300px;
+    margin: auto;
+}

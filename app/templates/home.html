@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>MyMDb</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+        {% block css %}
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+        {% endblock css %}
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <a class="navbar-brand">Brand</a>
+            <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="my-nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' id=1 %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="{% url 'activities' %}">Activities</a>
+                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout {{ request.user.username }}</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        {% block content %}
+        <div class="pages container text-center ml-auto mr-auto">
+            {% for i in '0123456789' %}
+                <span>{{ i|add:1 }}</span>
+            {% endfor %}
+        </div>
+        <div class="container-fluid">
+            <div class="row movies">
+                {% for movie in movies %}
+                    <div class="col-md-4 col-lg-3 col-12">
+                        <div class="card-wrapper ml-auto mr-auto">
+                            <div class="front">
+                                <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="">
+                            </div>
+                            <div class="back">
+                                <span class="score"><sup>{{ movie.vote_average }}</sup>/<sub>10</sub></span>
+                                <p class="text-left">
+                                    <span class="title"> {{ movie.original_title }}</span>
+                                    <br>
+                                    <span class="date"> {{ movie.release_date }}</span>
+                                </p>
+                                <p>
+                                    {% for genre in movie.genre_ids %}
+                                        <span class="genre">{{ genre }}</span>
+                                    {% endfor %}
+                                </p>
+                                <p class="content text-left">{{ movie.overview|truncatechars:200 }}</p>
+                                <button class="btn close-book">Close</button>
+                                <button class="btn more" data-id="{{ movie.id }}">Read more</button>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="pages container text-center ml-auto mr-auto">
+            {% for i in '0123456789' %}
+                <span>{{ i|add:1 }}</span>
+            {% endfor %}
+        </div>
+        {% endblock content %}
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/popper.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/active.js' %}"></script>
+        {% block js %}
+        <script src="{% static 'js/home.js' %}"></script>
+        {% endblock js %}
+    </body>
+</html>

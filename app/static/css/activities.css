@@ -1,0 +1,24 @@
+body {
+    background: none;
+    background-color: rgba(244, 132, 94, 0.7);
+}
+.activities {
+    margin-top: 80px;
+}
+.activity {
+    max-width: 700px;
+    box-shadow: 0 0 3px 0px #F37347;
+    padding: 20px;
+    margin: 20px;
+    transition: 0.3s;
+}
+.activity:hover {
+    box-shadow: 0 0 10px 0px #F37347;
+    cursor: default;
+}
+.activity .col-12 {
+    padding: 0;
+}
+.activity span {
+    text-align: right;
+}

@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+{% endblock css %}
+
+{% block content %}
+    <form method="POST" action="" class="sign-form ml-auto mr-auto">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" id="username" aria-describedby="helpId" 
+            placeholder="Enter your username" required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{4,19}$">
+            <small id="helpId" class="form-text text-muted">Username should be between 5 and 20 characters</small>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Enter password"
+            required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{4,39}$">
+            <small id="helpId" class="form-text text-muted">Password should be between 5 and 40 characters</small>
+        </div>
+        <button type="submit" class="btn submit-btn">Login</button>
+    </form>
+{% endblock content %}
+
+{% block js %}
+    <script src="{% static 'js/form.js' %}"></script>
+{% endblock js %}

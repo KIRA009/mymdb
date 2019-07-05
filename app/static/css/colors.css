@@ -1,0 +1,47 @@
+.color-primary-0 { color: #FF703F }	/* Main Primary color */
+.color-primary-1 { color: #FFA181 }
+.color-primary-2 { color: #FF936E }
+.color-primary-3 { color: #EF3F03 }
+.color-primary-4 { color: #B72F00 }
+
+.color-secondary-1-0 { color: #FFAA3F }	/* Main Secondary color (1) */
+.color-secondary-1-1 { color: #FFC781 }
+.color-secondary-1-2 { color: #FFBF6E }
+.color-secondary-1-3 { color: #EF8703 }
+.color-secondary-1-4 { color: #B76600 }
+
+.color-secondary-2-0 { color: #375DAA }	/* Main Secondary color (2) */
+.color-secondary-2-1 { color: #7695D4 }
+.color-secondary-2-2 { color: #5D7EBF }
+.color-secondary-2-3 { color: #12419F }
+.color-secondary-2-4 { color: #0C317A }
+
+.color-complement-0 { color: #67DB36 }	/* Main Complement color */
+.color-complement-1 { color: #9BED78 }
+.color-complement-2 { color: #89E463 }
+.color-complement-3 { color: #3FCE03 }
+.color-complement-4 { color: #2F9D00 }
+
+.bg-color-primary-0 { background-color: #FF703F }	/* Main Primary color */
+.bg-color-primary-1 { background-color: #FFA181 }
+.bg-color-primary-2 { background-color: #FF936E }
+.bg-color-primary-3 { background-color: #EF3F03 }
+.bg-color-primary-4 { background-color: #B72F00 }
+
+.bg-color-secondary-1-0 { background-color: #FFAA3F }	/* Main Secondary color (1) */
+.bg-color-secondary-1-1 { background-color: #FFC781 }
+.bg-color-secondary-1-2 { background-color: #FFBF6E }
+.bg-color-secondary-1-3 { background-color: #EF8703 }
+.bg-color-secondary-1-4 { background-color: #B76600 }
+
+.bg-color-secondary-2-0 { background-color: #375DAA }	/* Main Secondary color (2) */
+.bg-color-secondary-2-1 { background-color: #7695D4 }
+.bg-color-secondary-2-2 { background-color: #5D7EBF }
+.bg-color-secondary-2-3 { background-color: #12419F }
+.bg-color-secondary-2-4 { background-color: #0C317A }
+
+.bg-color-complement-0 { background-color: #67DB36 }	/* Main Complement color */
+.bg-color-complement-1 { background-color: #9BED78 }
+.bg-color-complement-2 { background-color: #89E463 }
+.bg-color-complement-3 { background-color: #3FCE03 }
+.bg-color-complement-4 { background-color: #2F9D00 }

@@ -1,0 +1,96 @@
+body {
+    margin-top: 65px;
+    background: none;
+    background-color: #FFBF6E;
+    margin-bottom: 20px;
+}
+@media (max-width: 992px) {
+    body {
+        margin-top: 55px;
+    }
+}
+@media (max-width: 550px) {
+    .movie {
+        width: 370px;
+    }
+}
+.options {
+    background-color:#375DAA;
+}
+.option {
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+.option:not(.active):hover {
+    cursor: pointer;
+    animation: shake 1s linear 0s infinite;
+}
+@keyframes shake {
+    0% {transform: translateX(-20px)}
+    10% {transform: translateX(20px)}
+    20% {transform: translateX(-20px)}
+    30% {transform: translateX(20px)}
+    40% {transform: translateX(-20px)}
+    50% {transform: translateX(20px)}
+    60% {transform: translateX(-20px)}
+    70% {transform: translateX(20px)}
+    80% {transform: translateX(-20px)}
+    90% {transform: translateX(20px)}
+    100% {transform: translateX(0px)}
+}
+.option.active {
+    color: #375DAA;
+    background-color: #ffffff
+}
+.movie {
+    box-shadow: 0 0 10px 1px #D19D5B;
+    padding-bottom: 10px;   
+    max-width: 600px;
+}
+.movie img {
+    height: 200px;
+}
+.title {
+    font-size: 16px;
+    padding-top: 10px;
+}
+.title .score {
+    font-size: 16px;
+}
+.title span {
+    font-size: 20px;
+}
+.title a {
+    text-decoration: none;
+    color: #101010;
+}
+.utilities {
+    clear: left;
+    margin-top: 10px;
+    width: 350px;
+}
+.utilities .utility {
+    padding: 2px;
+    margin: 0 10px;
+}
+.overview {
+    max-height: 120px;
+    overflow: hidden;
+}
+.overview p {
+    font-size: 16px;
+}
+::-webkit-inner-spin-button {
+    display: none
+}
+.utility .form-control {
+    width: 45px;
+    display: inline;
+    position: relative;
+    left: 10px;
+}

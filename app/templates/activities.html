@@ -1,0 +1,16 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/activities.css' %}">
+{% endblock css %}
+{% block content %}
+<div class="container text-center activities">
+    {% for activity in activities %}
+        <div class="row activity ml-auto mr-auto text-left">
+            <h5 class="col-12">{{ activity.activity }}</h5>
+            <span class="col-12 text-right">{{ activity.time_of_activity }}</span>
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}

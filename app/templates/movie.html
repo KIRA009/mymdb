@@ -1,0 +1,84 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/movie.css' %}">
+{% endblock css %}
+
+{% block content %}
+    <script id="movie-json" type="application/json">
+        { 
+        "id": "{{ movie.id }}",
+        "name": "{{ movie.title }}",
+        "date": "{{ movie.release_date }}",
+        "desc": "{{ movie.overview }}",
+        "img": "{{ movie.poster_path }}",
+        "name": "{{ movie.title }}"
+        }
+   </script>
+    <div class="container movie">
+        <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="">
+        <h1 class="title"><span>{{ movie.title }}</span>({{ movie.release_date|slice:": 4" }})</h1>
+        <p class="genres">
+            {% for genre in movie.genres %}
+                <span class="genre">{{ genre.name }}</span>
+            {% endfor %}
+        </p>
+        <div class="utilities">
+            <span class="score">{{ movie.vote_average }} / 10</span>
+            <span class="utility"><i url="{% url 'favorite' %}" class="fas fa-heart{% if favorited %}   active{% endif %}"></i></span>
+            <span class="utility"><i class="fas fa-bookmark{% if watched %} active" action="{% if watched.watched %}watched{% else %}watch-later{% endif %}"{% else %}" action="remove"{% endif %} data-toggle="modal" data-target="#watchlist"></i></span>
+            <span class="utility"><i class="fas fa-star {% if rated %}active" rating="{{ user_rating }}{% endif %}" data-toggle="modal" data-target="#rating"></i></span>
+            {% with id=movie.videos.results|first %}
+            <span class="utility"><i class="fab fa-youtube" data-id="{{ id.key }}"></i></span>
+            {% endwith %}
+        </div>
+        <div class="overview">
+            <h4>Overview</h4>
+            <p>{{ movie.overview }}</p>
+        </div>
+        <div class="modal fade" id="rating" tabindex="-1" role="dialog" aria-labelledby="ratingtitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ratingtitle">Rate the movie</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <span class="rating">
+                        {% for i in '0123456789' %}
+                            <i class="fas fa-star" rating="{{ i }}"></i>
+                        {% endfor %}
+                        </span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" url="{% url 'rate' %}" class="btn bg-prim save-rating" data-dismiss="modal">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="watchlist" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="watchlisttitle"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <button type="button" url="{% url 'watchlist' %}" class="btn bg-sec" data-action="remove" data-dismiss="modal">Remove from watchlist</button><br><br>
+                        <button type="button" url="{% url 'watchlist' %}" class="btn bg-prim" data-action="watched" data-dismiss="modal">Add to watched</button><br><br>
+                        <button type="button" url="{% url 'watchlist' %}" class="btn bg-prim" data-action="watch-later" data-dismiss="modal">Add to watch-later</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block js %}
+<script src="https://kit.fontawesome.com/08d8f6996a.js"></script>
+<script src="{% static 'js/movie.js' %}"></script>
+{% endblock js %}

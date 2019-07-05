@@ -1,0 +1,118 @@
+body {
+    margin-top: 75px;
+    background: none;
+    background-color: #FFBF6E;
+}
+.movies {
+    margin-top: 50px;
+}
+.card-wrapper {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 10px 10px 0px 0px #7695D4;
+    margin-bottom: 30px;
+    perspective: 1000px;
+    max-width: 280px;
+}
+.card-wrapper .front {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    cursor: pointer;
+    transition: 0.5s;
+    transform-origin: left;
+    backface-visibility: hidden;
+}
+.card-wrapper .front.hover {
+    transform: rotateY(-90deg);
+}
+.card-wrapper .front img {
+    width: 100%;
+    height: 100%;
+}
+.card-wrapper .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 10px;
+    top: 10px;
+    opacity: 0;
+    transition: 0.5s;
+    padding: 20px;
+    overflow-y: scroll;
+    z-index: -1;
+    background-color: #7695D4;
+}
+.card-wrapper .back.hover {
+    opacity: 1;
+}
+.card-wrapper .back .score {
+    background-color: #000000;
+    font-weight: 700;
+    color: #ffffff;
+    width: 50px;
+    padding: 13px 8px;
+    border-radius: 25px;
+    float: left;
+}
+.card-wrapper .back .score + p {
+    margin-left: 70px;
+}
+.card-wrapper .back .title {
+    font-weight: 700
+}
+.genre {
+    background-color: #0C317A;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 2px;
+    display: inline-block;
+    font-size: 16px;
+}
+.card-wrapper .back .content {
+    height: 200px;
+    overflow: hidden;
+}
+.card-wrapper .back .more {
+    background-color: #67DB36;
+    box-shadow: 5px 5px 0px #55B42D;
+    float: right;
+    transition: 0.3s;
+}
+.card-wrapper .back .close-book {
+    background-color: #EF3F03;
+    box-shadow: 5px 5px 0px #DA3A03;
+    float: left;
+    color: #ffffff;
+    transition: 0.3s;
+}
+.card-wrapper .back .close-book:hover, .card-wrapper .back .more:hover {
+    box-shadow: none;
+    transform: translate(5px, 5px);
+    cursor: pointer;
+}
+.movie img {
+    height: 400px;
+}
+.pages {
+    max-width: 400px;
+}
+.pages span {
+    border-radius: 20px;
+    background-color: #B72F00;
+    color: #ffffff;
+    padding: 10px 15px;
+    margin: 5px;
+    display: inline-block;
+    transition: 0.3s;
+}
+.pages span.active, .pages span:hover {
+    color: #B72F00;
+    background-color: #ffffff;
+    cursor: pointer;
+}

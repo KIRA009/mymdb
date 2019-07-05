@@ -1,0 +1,63 @@
+form {
+    padding: 20px;
+}
+.sign-form {
+    margin-top: 150px;
+    width: 400px;
+    background-color: rgba(255, 199, 129, 0.7);
+    border-radius: 20px 0;
+}
+.form-group {
+    padding: 10px;
+    transition: 0.3s;
+}
+.form-group.focus {
+    box-shadow: 0 0 20px 3px #FFC781;
+}
+input {
+    border: 0!important;
+    border-bottom: 1px solid rgba(239, 63, 3, 0.2)!important;
+    transition: 0.3s!important;
+    background-color: transparent!important;
+    padding-left: 0!important;
+}
+input:focus {
+    box-shadow: none!important;
+    border-bottom: 1px solid #EF3F03!important;
+}
+input::after {
+    width: 50%;
+    content: "";
+    background-color: #EF3F03;
+    height: 3px;
+    display: block;
+    transition: 0.3s;
+}
+input:focus::after {
+    width: 100%;
+}
+label {
+    font-size: 24px;
+}
+small {
+    font-size: 12px;
+}
+.submit-btn {
+    background-color: #67DB36;
+    box-shadow: 5px 5px 0px #55B42D;
+    transition: 0.3s;
+    position: relative;
+    top: -5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #37731D;
+    border-radius: 10px 0;
+}
+button:focus, button:active {
+    box-shadow: none!important;
+}
+.submit-btn:hover, .submit-btn:focus {
+    box-shadow: none;
+    transform: translate(5px, 5px);
+    color: #2F6319;
+}

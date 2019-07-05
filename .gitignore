@@ -4,7 +4,6 @@ LICENSE.txt
 Lib/
 Scripts/
 tcl/
-migrations/
 __pycache__/
 *.sqlite3
 *.ini

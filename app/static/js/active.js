@@ -4,5 +4,4 @@ $(window).on('load', function(e) {
     else
         $('a[href="' + window.location.pathname +'"]').addClass('active');
     $('.navbar-toggler').html($('a.active').html());
-    // console.log($('a.active'));
 })

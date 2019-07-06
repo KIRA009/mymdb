@@ -128,10 +128,6 @@ body {
     background-color: #ffffff;
     z-index: 99;
 }
-.navbar-toggler {
-    background-color: #6D89C1;
-    color: #ffffff;
-}
 .modal {
     top: 20vh;
 }

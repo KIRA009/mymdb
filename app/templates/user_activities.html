@@ -6,10 +6,6 @@
 {% endblock css %}
 {% block content %}
 <div class="container text-center activities">
-    <div id="toggle" class="ml-auto{% if private %} toggled{% endif %}">
-        <label>Private</label>
-        <span></span>
-    </div>
     {% for activity in activities %}
         <div class="row activity ml-auto mr-auto text-left">
             <h5 class="col-12">{{ activity.activity }}</h5>
@@ -20,5 +16,7 @@
 {% endblock content %}
 
 {% block js %}
-    <script src="{% static 'js/activities.js' %}"></script>
+    <script>
+        $('a[href="/app/activities/"]').addClass('active');
+    </script>
 {% endblock js %}

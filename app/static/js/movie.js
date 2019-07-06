@@ -1,6 +1,7 @@
 const movie_json = JSON.parse($('#movie-json').html());
 $('#movie-json').remove();
-console.log(movie_json)
+
+$('.navbar-toggler').html('Movie');
 
 $('.fa-youtube').click(function() {
     window.open('https://www.youtube.com/watch?v=' + $(this).attr('data-id'), '_blank').focus();

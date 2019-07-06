@@ -31,6 +31,7 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
 	username = models.CharField(max_length=128, unique=True, primary_key=True)
+	private = models.BooleanField(default=False)
 	USERNAME_FIELD = 'username'
 	REQUIRED_FIELDS = []
 

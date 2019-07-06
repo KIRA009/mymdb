@@ -34,3 +34,7 @@ nav {
 button:focus {
     outline: 0;
 }
+.navbar-toggler {
+    background-color: #6D89C1;
+    color: #ffffff;
+}

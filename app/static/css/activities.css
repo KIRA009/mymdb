@@ -22,3 +22,35 @@ body {
 .activity span {
     text-align: right;
 }
+#toggle {
+    width: 70px;
+    height: 30px;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: #cccccc;
+}
+#toggle:hover {
+    cursor: pointer;
+}
+#toggle label {
+    background-color: transparent;
+    position: relative;
+    left: -70px;
+}
+#toggle span {
+    display: inherit;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    transition: 0.3s;
+    position: relative;
+    left: 0;
+    top: -32px;
+}
+#toggle.toggled span {
+    left: 40px;
+}
+#toggle.toggled {
+    background-color: #5D7EBF;
+}

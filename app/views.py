@@ -148,12 +148,35 @@ class Profile(View):
 		                                        'user_watchlist': user_watchlist})
 
 
-class Activities(TemplateView):
-	template_name = 'activities.html'
+class Activities(View):
+	@staticmethod
+	def get(request):
 
-	def get_context_data(self, **kwargs):
-		kwargs['activities'] = Activity.objects.filter(user=self.request.user).order_by('-time_of_activity')
-		return super().get_context_data(**kwargs)
+		return render(request, 'activities.html', {'activities': Activity.objects.filter(user=request.user).
+		              order_by('-time_of_activity'), 'private': request.user.private})
+
+	@staticmethod
+	def post(request):
+		request.user.private = not request.user.private
+		request.user.save()
+		return JsonResponse({})
+
+
+class UserActivities(View):
+	@staticmethod
+	def get(request, user):
+		user = User.objects.filter(username=user).first()
+		if user is None:
+			return redirect('home')
+		if not user.private:
+			return render(request, 'user_activities.html', {'activities': Activity.objects.filter(user=user).
+			              order_by('-time_of_activity')})
+		else:
+			if not request.user.is_anonymous:
+				if request.user == user:
+					return render(request, 'user_activities.html', {'activities': Activity.objects.filter(user=user).
+					              order_by('-time_of_activity')})
+		return redirect('home')
 
 
 class Movie(TemplateView):

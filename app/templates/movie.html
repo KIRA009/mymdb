@@ -29,7 +29,7 @@
             <span class="utility"><i class="fas fa-bookmark{% if watched %} active" action="{% if watched.watched %}watched{% else %}watch-later{% endif %}"{% else %}" action="remove"{% endif %} data-toggle="modal" data-target="#watchlist"></i></span>
             <span class="utility"><i class="fas fa-star {% if rated %}active" rating="{{ user_rating }}{% endif %}" data-toggle="modal" data-target="#rating"></i></span>
             {% with id=movie.videos.results|first %}
-            <span class="utility"><i class="fab fa-youtube" data-id="{{ id.key }}"></i></span>
+            <span class="utility"><i class="fab fa-youtube active" data-id="{{ id.key }}"></i></span>
             {% endwith %}
         </div>
         <div class="overview">

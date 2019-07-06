@@ -56,7 +56,7 @@ body {
     background-color: #ffffff;
     cursor: pointer;
 }
-.fa-youtube:hover, .fa-heart:hover, .fa-heart.active {
+.fa-youtube:hover, .fa-youtube.active, .fa-heart:hover, .fa-heart.active {
     color: #B72F00;
 }
 .fa-bookmark:hover, .fa-bookmark.active {

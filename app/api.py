@@ -5,7 +5,7 @@ from mymdb.settings import API_KEY
 
 class Api:
 	def __init__(self):
-		self.params = {'api_key': API_KEY}
+		self.params = {'api_key': API_KEY, 'language': 'en-US'}
 		self.BASE_URL = 'https://api.themoviedb.org/3/'
 		self.genres = {28: 'Action', 12: 'Adventure', 16: 'Animation', 35: 'Comedy', 80: 'Crime', 99: 'Documentary',
 		               18: 'Drama', 10751: 'Family', 14: 'Fantasy', 36: 'History', 27: 'Horror', 10402: 'Music',
@@ -30,3 +30,10 @@ class Api:
 			params['append_to_response'] = ','.join(args)
 		movie = self.get(url, params)
 		return movie
+
+	def search(self, query_str):
+		url = self.BASE_URL + 'search/movie'
+		params = self.params.copy()
+		params['query'] = query_str
+		results = self.get(url, params)
+		return results['results']

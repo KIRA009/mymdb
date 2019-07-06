@@ -56,6 +56,14 @@ class Home(TemplateView):
 		return super().get_context_data(**kwargs)
 
 
+class Search(View):
+	@staticmethod
+	def get(request, movie_name):
+		results = [[f'{movie["title"]} ({movie["release_date"][:4]})', movie['id']] for movie in
+		           myapi.search(movie_name)]
+		return JsonResponse({'movies': results})
+
+
 class Favorites(View):
 	@staticmethod
 	def post(request):

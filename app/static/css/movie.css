@@ -119,9 +119,6 @@ button:focus, button:active {
 .bg-sec:hover, .bg-sec:focus {
     color: #ffffff;
 }
-.modal {
-    top: 30vh;
-}
 #watchlist .modal-dialog, .watchlist .modal-dialog {
     max-width: 300px;
     margin: auto;

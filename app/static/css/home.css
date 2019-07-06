@@ -116,3 +116,31 @@ body {
     background-color: #ffffff;
     cursor: pointer;
 }
+.fa-search {
+    font-size: 32px;
+    position: fixed;
+    right: 25px;
+    top: 150px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #ffffff;
+    z-index: 99;
+}
+.navbar-toggler {
+    background-color: #6D89C1;
+    color: #ffffff;
+}
+.modal {
+    top: 20vh;
+}
+#search-options {
+    max-height: 380px;
+    overflow-y: scroll;
+}
+#search-options input {
+    cursor: pointer;
+    background-color: #55B42D;
+    color: #ffffff;
+}

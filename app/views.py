@@ -10,13 +10,11 @@ from .api import Api
 myapi = Api()
 
 
-class Index(TemplateView):
-	template_name = 'index.html'
-
-
 class Register(View):
 	@staticmethod
 	def get(request):
+		if request.user.is_authenticated:
+			return redirect('home')
 		return render(request, 'register.html')
 
 	@staticmethod
@@ -29,6 +27,8 @@ class Register(View):
 class Login(View):
 	@staticmethod
 	def get(request):
+		if request.user.is_authenticated:
+			return redirect('home')
 		return render(request, 'login.html')
 
 	@staticmethod

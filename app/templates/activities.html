@@ -1,11 +1,20 @@
 {% extends 'home.html' %}
 {% load static %}
 
+{% block title %}Activities{% endblock title %}
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/activities.css' %}">
 {% endblock css %}
 {% block content %}
+<script type="application/json" id="user">
+    {
+        "user": "{{ request.user }}"
+    }
+</script>
 <div class="container text-center activities">
+    <div class="mr-auto text-left">
+        <i class="fas fa-copy"></i>
+    </div>
     <div id="toggle" class="ml-auto{% if private %} toggled{% endif %}">
         <label>Private</label>
         <span></span>

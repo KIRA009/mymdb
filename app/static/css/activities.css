@@ -28,6 +28,8 @@ body {
     border-radius: 15px;
     padding: 5px;
     background-color: #cccccc;
+    position: relative;
+    top: -30px;
 }
 #toggle:hover {
     cursor: pointer;
@@ -53,4 +55,16 @@ body {
 }
 #toggle.toggled {
     background-color: #5D7EBF;
+}
+.fa-copy {
+    font-size: 24px;
+    transition: 0.3s;
+}
+.fa-copy:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.fa-copy.copied {
+    color: #5d7ebf;
+    transform: scale(1.2);
 }

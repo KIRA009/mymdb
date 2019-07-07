@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>MyMDb</title>
+        <title>MyMDb | {% block title %}Home{% endblock title %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
@@ -100,8 +100,8 @@
         <script src="{% static 'js/popper.min.js' %}"></script>
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
         <script src="{% static 'js/active.js' %}"></script>
-        {% block js %}
         <script src="https://kit.fontawesome.com/08d8f6996a.js"></script>
+        {% block js %}
         <script src="{% static 'js/home.js' %}"></script>
         {% endblock js %}
     </body>

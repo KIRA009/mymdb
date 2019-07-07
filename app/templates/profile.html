@@ -1,6 +1,7 @@
 {% extends 'home.html' %}
 {% load static %}
 {% load get %}
+{% block title %}Profile{% endblock title %}
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/movie.css' %}">
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
@@ -106,6 +107,5 @@
 {% endblock content %}
 
 {% block js %}
-    <script src="https://kit.fontawesome.com/08d8f6996a.js"></script>
     <script src="{% static 'js/profile.js' %}"></script>
 {% endblock js %}

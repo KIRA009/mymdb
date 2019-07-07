@@ -2,11 +2,10 @@ from django.urls import path
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 
-from .views import Index, Login, Register, Home, Search, Movie, Profile, Favorites, WatchlistView, Rate, Activities, \
+from .views import Login, Register, Home, Search, Movie, Profile, Favorites, WatchlistView, Rate, Activities, \
 	UserActivities, Logout
 
 urlpatterns = [
-	path('', Index.as_view(), name='index'),
 	path('login/', Login.as_view(), name='login'),
 	path('register/', Register.as_view(), name='register'),
 	path('home/', login_required(Home.as_view()), name='home'),

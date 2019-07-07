@@ -1,5 +1,7 @@
 {% extends 'home.html' %}
 {% load static %}
+
+{% block title %}{{ movie.title }}{% endblock title %}
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/movie.css' %}">
 {% endblock css %}
@@ -79,6 +81,5 @@
 {% endblock content %}
 
 {% block js %}
-<script src="https://kit.fontawesome.com/08d8f6996a.js"></script>
 <script src="{% static 'js/movie.js' %}"></script>
 {% endblock js %}
